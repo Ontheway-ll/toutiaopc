@@ -1,7 +1,19 @@
 <template>
-  <div>
-      我是home页面
-  </div>
+<!-- 整个大容器 -->
+ <el-container>
+   <!-- 左边侧边栏 -->
+    <el-aside >左边侧边栏</el-aside>
+    <!-- 右边一个容器 -->
+    <el-container>
+      <!-- 右边容器上部分 -->
+     <el-header>右边容器上部分</el-header>
+     <!-- 右边下面主体部分 -->
+     <el-main>右边下面主体部分
+       <router-view></router-view>
+     </el-main>
+    </el-container>
+</el-container>
+
 </template>
 
 <script>
