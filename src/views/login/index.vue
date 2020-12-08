@@ -70,6 +70,22 @@ export default {
       // 第二种promise方案
       this.$refs.loginForm.validate().then(() => {
         console.log('校验通过')
+        // 校验通过后调接口 $axios也是一个方法，传入对象
+        this.$axios({
+          url: '/authorizations', // 请求地址
+          // params: {}, // url参数，参数拼接在url地址上，常说的get参数
+          // data: this.loginForm, // body请求体参数，常用post，put，patch
+          data: { ...this.loginForm, checked: null }, // body请求体参数
+          method: 'post' // 请求类型 post/get/delete/put/patch 默认值是get类型 可全大写 可全小写
+        }).then(res => {
+          console.log(res.data.data)
+          window.localStorage.setItem('user-token', res.data.data.token)
+          this.$router.push('/home')
+          // 还有可以，this.$router.push({path:'/home'})
+        }).catch(() => {
+          this.$message({ message: '用户名或者密码错误', type: 'error' })
+          // this.$message.error('用户名或者密码错误')
+        })
       })
     }
   }
