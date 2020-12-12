@@ -18,6 +18,11 @@ const routes = [
       {
         path: '', // 什么都不写默认去二级路由组件，写/a就和home拼接home/a
         component: SecondHome
+      },
+      {
+        path: '/home/comment',
+        // path:'comment'//简写地址
+        component: () => import('@/views/comment')
       }
     ]
   },

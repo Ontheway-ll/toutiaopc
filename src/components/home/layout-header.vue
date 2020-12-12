@@ -52,12 +52,12 @@ export default {
     }
   },
   created () {
-    const token = localStorage.getItem('user-token')
+    // const token = localStorage.getItem('user-token')
     this.$axios({
-      url: '/user/profile',
-      headers: {
-        Authorization: `Bearer ${token}` // 格式要求 Bearer +token
-      }
+      url: '/user/profile'
+      // headers: {
+      //   Authorization: `Bearer ${token}` // 格式要求 Bearer +token
+      // }
     }).then(res => {
       // 如果加载成功了 我们要将数据赋值给 userInfo
       this.userInfo = res.data.data

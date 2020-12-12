@@ -12,7 +12,7 @@
        <layout-header></layout-header>
      </el-header>
      <!-- 右边下面主体部分 -->
-     <el-main style="padding:0;" >右边下面主体部分
+     <el-main style="padding:0;" >
        <router-view></router-view>
      </el-main>
     </el-container>
